@@ -14,7 +14,7 @@ class Persona(object):
 #y siempre devolvemos un HttpResponse
 def saludo(request):
 
-    nombre = "Juan"
+    nombre = "Pedro"
     apellido = "Díaz"
     persona = Persona(nombre, apellido)
     
