@@ -54,7 +54,7 @@ ROOT_URLCONF = 'pilinf_django_1.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['C:/_DIEGO_DIAZ/2PERSONAL/workspace-vscode/pilinf_django_1/python/pilinf_django_1/pilinf_django_1/plantillas'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -1,7 +1,10 @@
 from django.http import HttpResponse
 import datetime
-from django.template import Template, Context
+#from django.template import Template
 from .clases.persona import Persona
+
+#importamos el cargador de plantillas
+from django.template import loader, Context
 
 
 
@@ -23,19 +26,29 @@ def saludo(request):
 
 
     #obtenemos la plantilla
-    doc_externo = open("C:/_DIEGO_DIAZ/2PERSONAL/workspace-vscode/pilinf_django_1/python/pilinf_django_1/pilinf_django_1\plantillas/miplantilla.html")
-    plt=Template(doc_externo.read())
-    doc_externo.close()
+    #doc_externo = open("C:/_DIEGO_DIAZ/2PERSONAL/workspace-vscode/pilinf_django_1/python/pilinf_django_1/pilinf_django_1/plantillas/miplantilla.html")
+    #plt=Template(doc_externo.read())
+    #doc_externo.close()
+
+    doc_externo = loader.get_template('miplantilla.html')
     
     #creamos el contexto. Aqui es donde pasamos los datos a la vista
-    ctx=Context({
+    #ctx=Context({
+    #    "nombre_persona":nombre, 
+    #    "apellido_persona":apellido,
+    #    "apellido2_persona":"asiTambienSePuede",
+    #    "objeto_valor": persona,
+    #    "temas": temas_curso
+    #})
+
+    diccionario = {
         "nombre_persona":nombre, 
         "apellido_persona":apellido,
         "apellido2_persona":"asiTambienSePuede",
         "objeto_valor": persona,
         "temas": temas_curso
-    })
-    documento = plt.render(ctx)
+    }
+    documento = doc_externo.render(diccionario)
 
     return HttpResponse(documento)
 
