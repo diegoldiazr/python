@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    {% include "superior/cabeceras.html" %}
-</head>
-<body>
-    {% include "superior/barra_superior.html" %}
+{% extends "padre.html" %}
 
+{% block title%} miPlantilla saludo {% endblock %}
+
+{% block content %} 
     <p>Hoy es: {{fecha_actual}}</p>
-</body>
-</html>
+{% endblock %}

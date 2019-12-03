@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>    
-    {% include "superior/cabeceras.html" %}
-</head>
-<body>
+{% extends "padre.html" %}
 
-    {% include "superior/barra_superior.html" %}
+{% block title%} miPlantilla saludo {% endblock %}
 
+{% block content %} 
     <h1>
         <!--aqui pasamos el valor del modelo. en Python se llaman diccionarios-->
         mi primera plantilla. Hola {{nombre_persona|upper}} {{apellido_persona}} {{apellido2_persona}}
@@ -38,5 +34,4 @@
         </p>
     </h3>
     
-</body>
-</html>
+{% endblock %}
