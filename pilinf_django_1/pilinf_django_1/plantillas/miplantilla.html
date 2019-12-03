@@ -13,7 +13,7 @@
     </h1>    
     <br>
     <h2>
-        aqui estamos probando con objetos: hola {{objeto_valor.nombre}}
+        aqui estamos probando con objetos: hola {{objeto_valor.nombre.upper}}
     </h2>
     <h3>
         <p><strong>Temas a ver:</strong></p>
@@ -21,7 +21,7 @@
             <ul>
                 {% for elTema in temas%}
                     {% if elTema == 'Plantillas' %}
-                        <li>!!!!! comidaaaaaaa ¡¡¡¡¡</li>
+                        <li>!!!!! comidaaaaaaa ******</li>
                     {% else %}
                         <li>{{elTema}}</li>
                     {% endif %}                    
