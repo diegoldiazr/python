@@ -20,7 +20,12 @@
         <p>
             <ul>
                 {% for elTema in temas%}
-                    <li>{{elTema}}</li>
+                    {% if elTema == 'Plantillas' %}
+                        <li>!!!!!comidaaaaaaa</li>
+                    {% else %}
+                        <li>{{elTema}}</li>
+                    {% endif %}
+                    
                 {% endfor %}
             </ul>
         </p>
