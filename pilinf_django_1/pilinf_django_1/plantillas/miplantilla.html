@@ -18,9 +18,11 @@
     <h3>
         <p><strong>Temas a ver:</strong></p>
         <p>
-            {% for elTema in temas%}
-                {{elTema}} <br>
-            {% endfor %}
+            <ul>
+                {% for elTema in temas%}
+                    <li>{{elTema}}</li>
+                {% endfor %}
+            </ul>
         </p>
     </h3>
     
