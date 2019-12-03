@@ -15,5 +15,14 @@
     <h2>
         aqui estamos probando con objetos: hola {{objeto_valor.nombre}}
     </h2>
+    <h3>
+        <p><strong>Temas a ver:</strong></p>
+        <p>
+            {% for elTema in temas%}
+                {{elTema}} ,
+            {% endfor %}
+        </p>
+    </h3>
+    
 </body>
 </html>

@@ -1,13 +1,9 @@
 from django.http import HttpResponse
 import datetime
 from django.template import Template, Context
+from .clases.persona import Persona
 
-#esto es una clase
-class Persona(object):
-    #esto es el constructor de la clase
-    def __init__(self, nombre, apellido):
-        self.nombre = nombre
-        self.apellido = apellido
+
 
 #cada funcion en esta clase se llama vista.
 #el primer parametro siempre es una requets de tipo HttpRequest
@@ -17,7 +13,14 @@ def saludo(request):
     nombre = "Pedro"
     apellido = "Díaz"
     persona = Persona(nombre, apellido)
-    
+    temas_curso = [
+        "Plantillas", 
+        "Modelos", 
+        "Formularios",
+        "Vistas",
+        "Despliegues"
+    ]
+
 
     #obtenemos la plantilla
     doc_externo = open("C:/_DIEGO_DIAZ/2PERSONAL/workspace-vscode/pilinf_django_1/python/pilinf_django_1/pilinf_django_1\plantillas/miplantilla.html")
@@ -29,7 +32,8 @@ def saludo(request):
         "nombre_persona":nombre, 
         "apellido_persona":apellido,
         "apellido2_persona":"asiTambienSePuede",
-        "objeto_valor": persona
+        "objeto_valor": persona,
+        "temas": temas_curso
     })
     documento = plt.render(ctx)
 
