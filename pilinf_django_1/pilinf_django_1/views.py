@@ -4,7 +4,6 @@ import datetime
 from .clases.persona import Persona
 
 #importamos el cargador de plantillas
-from django.template import loader, Context
 from django.shortcuts import render
 
 
