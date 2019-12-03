@@ -32,25 +32,22 @@ def saludo(request):
         "temas": temas_curso
     }
     
-    #return HttpResponse(documento)
     return render(request, 'miplantilla.html', diccionario)
 
 def despedida(request):
-    return HttpResponse("adiooooooos")
+    diccionario = {
+        "mensaje":"adiooooos"
+    }
+    return render(request, 'despedida.html', diccionario)
 
 #en python la convencion es que en vez de escribir como nombre de 
 #funcion dameFecha se pone dame_fecha
 def dame_fecha(request):
-    fecha_actual=datetime.datetime.now()
-    documento = """<html>
-    <body>
-    <h2>
-    Fecha y hora actuales %s
-    </h2>
-    </body>
-    </html>""" % fecha_actual
-    
-    return HttpResponse(documento)
+    fecha_actual=datetime.datetime.now()    
+    diccionario = {
+        "fecha_actual":fecha_actual
+    }
+    return render(request, 'fechaActual.html', diccionario)
 
 
 def calcula_edad(request, edadActual, anno):
@@ -66,4 +63,4 @@ def calcula_edad(request, edadActual, anno):
     </body>
     </html>""" % (anno, resultado)
     
-    return HttpResponse(documento)
+    return render(request, 'miplantilla.html', documento)
